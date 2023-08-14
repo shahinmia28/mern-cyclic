@@ -2,19 +2,19 @@ const express = require("express");
 const seedRouter = require("./routers/seedData");
 const userRouter = require("./routers/userRouter");
 const app = express();
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 const orderRouter = require("./routers/orderRouter");
 const path = require("path");
-// const { fileURLToPath } = require("url");
+
 
 const cors = require("cors");
 app.use(cors());
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
 
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "../client/build")));
 
