@@ -18,10 +18,10 @@ app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, "../client/public")));
+app.use(express.static(path.join(__dirname, "../build")));
 
 app.use("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "../client/public/index.html"));
+  res.sendFile(path.join(__dirname, "../buildindex.html"));
 });
 
 app.use("/seed", seedRouter);
