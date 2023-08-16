@@ -4,10 +4,7 @@
   "description": "cc",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js",
-    "client": "npm start --prefix ./build",
-    "dev": "concurrently \"npm run start\" \"npm run client\""
+    "start": "node ./src/index.js",
   },
   "keywords": [],
   "author": "shahin",
