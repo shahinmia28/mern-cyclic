@@ -7,9 +7,9 @@ const path = require("path");
 
 app.use(express.static(__dirname, "build"));
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "build/index.html"));
-// });
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "build/index.html"));
+});
 
 app.listen(PORT, async () => {
   console.log(`server is running`);
