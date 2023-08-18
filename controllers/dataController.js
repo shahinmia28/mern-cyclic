@@ -27,8 +27,8 @@ const displayFoodData = async (req, res, next) => {
   try {
     res.status(200).send([global.food_data, global.category_data]);
   } catch (error) {
-    console.error(error.message);
     res.status(404).send(error.message);
+    console.log(error.message)
   }
 };
 
